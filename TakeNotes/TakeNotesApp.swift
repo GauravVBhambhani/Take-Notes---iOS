@@ -7,6 +7,7 @@
 
 import Amplify
 import AWSCognitoAuthPlugin
+import AWSAPIPlugin
 import SwiftUI
 
 @main
@@ -15,6 +16,7 @@ struct TakeNotesApp: App {
     init() {
             do {
                 try Amplify.add(plugin: AWSCognitoAuthPlugin())
+                try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
                 try Amplify.configure()
                 print("Initialized Amplify");
             } catch {
@@ -25,6 +27,7 @@ struct TakeNotesApp: App {
     var body: some Scene {
         WindowGroup {
             LandingView()
+                .environmentObject(NotesService())
                 .environmentObject(AuthenticationService())
         }
     }
