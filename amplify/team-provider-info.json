@@ -10,6 +10,11 @@
       "StackName": "amplify-takenotes-dev-c9e01",
       "StackId": "arn:aws:cloudformation:us-east-1:711387100276:stack/amplify-takenotes-dev-c9e01/79576680-96b6-11ef-a688-0affc02ec4e3",
       "AmplifyAppId": "d3aum09wbwxgrf"
+    },
+    "categories": {
+      "auth": {
+        "takenotes1f9f7d23": {}
+      }
     }
   }
 }

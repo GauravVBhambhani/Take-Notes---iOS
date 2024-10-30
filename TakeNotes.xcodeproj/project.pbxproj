@@ -14,6 +14,9 @@
 		10114FEF2CD2540A00831F8B /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10114FEE2CD2540A00831F8B /* Note.swift */; };
 		10114FF12CD2544F00831F8B /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10114FF02CD2544F00831F8B /* NoteView.swift */; };
 		10114FF42CD257B600831F8B /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = 10114FF32CD257B600831F8B /* Amplify */; };
+		10114FF72CD25BD600831F8B /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 10114FF62CD25BD600831F8B /* AWSCognitoAuthPlugin */; };
+		10114FFB2CD25C5600831F8B /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10114FFA2CD25C5600831F8B /* AuthenticationService.swift */; };
+		10114FFD2CD25C7700831F8B /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10114FFC2CD25C7700831F8B /* LandingView.swift */; };
 		CE2C5078305297A5F7CB7C0F /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD4B3C34BEE55930A289CD /* amplifyconfiguration.json */; };
 		D4DA40A1404EC890E234CD3D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C507475DA4C7F5B795A3FAEA /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
@@ -26,6 +29,9 @@
 		10114FEC2CD2540000831F8B /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		10114FEE2CD2540A00831F8B /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		10114FF02CD2544F00831F8B /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		10114FF82CD25BEB00831F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		10114FFA2CD25C5600831F8B /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		10114FFC2CD25C7700831F8B /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		7EFD4B3C34BEE55930A289CD /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		C507475DA4C7F5B795A3FAEA /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -36,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10114FF42CD257B600831F8B /* Amplify in Frameworks */,
+				10114FF72CD25BD600831F8B /* AWSCognitoAuthPlugin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,7 @@
 				10114FDB2CD2539300831F8B /* TakeNotes */,
 				10114FDA2CD2539300831F8B /* Products */,
 				DB3B7AFBA429F4A0338A58A1 /* AmplifyConfig */,
+				10114FF52CD25BD600831F8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +70,8 @@
 		10114FDB2CD2539300831F8B /* TakeNotes */ = {
 			isa = PBXGroup;
 			children = (
+				10114FF92CD25C3D00831F8B /* ViewModel */,
+				10114FF82CD25BEB00831F8B /* Info.plist */,
 				10114FEB2CD253F500831F8B /* View */,
 				10114FEA2CD253ED00831F8B /* Model */,
 				10114FDC2CD2539300831F8B /* TakeNotesApp.swift */,
@@ -92,8 +102,24 @@
 			children = (
 				10114FEC2CD2540000831F8B /* NotesView.swift */,
 				10114FF02CD2544F00831F8B /* NoteView.swift */,
+				10114FFC2CD25C7700831F8B /* LandingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		10114FF52CD25BD600831F8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		10114FF92CD25C3D00831F8B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				10114FFA2CD25C5600831F8B /* AuthenticationService.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DB3B7AFBA429F4A0338A58A1 /* AmplifyConfig */ = {
@@ -123,6 +149,7 @@
 			name = TakeNotes;
 			packageProductDependencies = (
 				10114FF32CD257B600831F8B /* Amplify */,
+				10114FF62CD25BD600831F8B /* AWSCognitoAuthPlugin */,
 			);
 			productName = TakeNotes;
 			productReference = 10114FD92CD2539300831F8B /* TakeNotes.app */;
@@ -183,10 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10114FFD2CD25C7700831F8B /* LandingView.swift in Sources */,
 				10114FF12CD2544F00831F8B /* NoteView.swift in Sources */,
 				10114FDD2CD2539300831F8B /* TakeNotesApp.swift in Sources */,
 				10114FED2CD2540000831F8B /* NotesView.swift in Sources */,
 				10114FEF2CD2540A00831F8B /* Note.swift in Sources */,
+				10114FFB2CD25C5600831F8B /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +352,7 @@
 				DEVELOPMENT_TEAM = 73923FA922;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TakeNotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -352,6 +382,7 @@
 				DEVELOPMENT_TEAM = 73923FA922;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TakeNotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -409,6 +440,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10114FF22CD257B600831F8B /* XCRemoteSwiftPackageReference "amplify-swift" */;
 			productName = Amplify;
+		};
+		10114FF62CD25BD600831F8B /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10114FF22CD257B600831F8B /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSCognitoAuthPlugin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
