@@ -23,11 +23,7 @@ struct NoteView: View {
             if let image = note.image {
                 Spacer()
 
-                Divider()
-
-                Image(systemName: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
+                RemoteImage(name: image)
                     .frame(width: 30, height: 30)
 
             }
