@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NotesView: View {
+    @EnvironmentObject private var authenticationService: AuthenticationService
     @State var notes: [Note] = []
 
     var body: some View {
@@ -21,6 +22,13 @@ struct NotesView: View {
                 }
             }
             .navigationTitle("Notes")
+            .toolbar {
+                Button("Sign Out") {
+                    Task {
+                        await authenticationService.signOut()
+                    }
+                }
+            }
         }
     }
 }
