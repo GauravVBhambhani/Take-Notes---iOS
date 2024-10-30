@@ -8,6 +8,7 @@
 import Amplify
 import AWSCognitoAuthPlugin
 import AWSAPIPlugin
+import AWSS3StoragePlugin
 import SwiftUI
 
 @main
@@ -17,6 +18,7 @@ struct TakeNotesApp: App {
             do {
                 try Amplify.add(plugin: AWSCognitoAuthPlugin())
                 try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
+                try Amplify.add(plugin: AWSS3StoragePlugin())
                 try Amplify.configure()
                 print("Initialized Amplify");
             } catch {
@@ -29,6 +31,7 @@ struct TakeNotesApp: App {
             LandingView()
                 .environmentObject(NotesService())
                 .environmentObject(AuthenticationService())
+                .environmentObject(StorageService())
         }
     }
 }

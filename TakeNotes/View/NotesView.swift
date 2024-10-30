@@ -10,6 +10,8 @@ import SwiftUI
 struct NotesView: View {
     @EnvironmentObject private var authenticationService: AuthenticationService
     @EnvironmentObject private var notesService: NotesService
+    @EnvironmentObject private var storageService: StorageService
+    
     @State private var isSavingNote = false
 
     var body: some View {
@@ -26,6 +28,10 @@ struct NotesView: View {
                         let note = notesService.notes[index]
                         Task {
                             await notesService.delete(note)
+                            
+                            if let image = note.image {
+                                await storageService.remove(withName: image)
+                            }
                         }
                     }
                 }
@@ -55,6 +61,8 @@ struct NotesView: View {
         }
     }
 }
+
+
 //
 //#Preview {
 //    NotesView(notes: [
